@@ -1,0 +1,23 @@
+version: '3'
+services:
+  plex:
+    image: plexinc/pms-docker
+    container_name: plex
+    environment:
+      - PLEX_CLAIM=<PLEX_ACCOUNT_CLAIM_HERE>
+    ports:
+      - "32400:32400/tcp"
+      - "3005:3005/tcp"
+      - "8324:8324/tcp"
+      - "32410:32410/udp"
+      - "32412:32412/udp"
+      - "32414:32414/udp"
+    volumes:
+      - ./config:/config
+      - ./media:/data
+    restart: unless-stopped
+    networks:
+      - plex_network
+
+networks:
+  plex_network:
