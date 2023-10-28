@@ -23,3 +23,8 @@ To set up Plex Media Server, follow these steps:
 
    ```bash
    docker-compose up -d
+   ```
+
+5. After starting Plex, you can continue the setup process by accessing the Plex Media Server web interface using a web browser. Use the following URL, replacing localhost with your server's IP address if necessary:
+
+`http://localhost:32400/web`
